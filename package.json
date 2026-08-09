@@ -1,0 +1,13 @@
+{
+  "name": "whoami-sankhacooray-com",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Minimalist single-viewport 'who am I' identity page for Sankha Cooray (whoami.sankhacooray.com).",
+  "scripts": {
+    "dev": "wrangler dev",
+    "deploy": "wrangler deploy"
+  },
+  "devDependencies": {
+    "wrangler": "^4.90.0"
+  }
+}

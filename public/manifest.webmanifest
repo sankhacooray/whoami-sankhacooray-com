@@ -1,0 +1,12 @@
+{
+  "name": "whoami · Sankha Cooray",
+  "short_name": "whoami",
+  "description": "One person, many perspectives — software engineer, XR innovator, maker, creative technologist.",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#0c0d10",
+  "theme_color": "#0c0d10",
+  "icons": [
+    { "src": "icon.svg", "sizes": "any", "type": "image/svg+xml", "purpose": "any" }
+  ]
+}

@@ -1,0 +1,198 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="dark">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+<title>whoami · Sankha Cooray</title>
+<meta name="description" content="Who is Sankha Cooray — a software engineer, XR innovator, maker and creative technologist. Explore the many perspectives behind the work." />
+<link rel="icon" href="icon.svg" type="image/svg+xml" />
+<link rel="apple-touch-icon" href="icon.svg" />
+<link rel="manifest" href="manifest.webmanifest" />
+<meta name="theme-color" content="#0c0d10" />
+<link rel="canonical" href="https://whoami.sankhacooray.com/" />
+
+<!-- Open Graph / Twitter -->
+<meta property="og:type" content="website" />
+<meta property="og:url" content="https://whoami.sankhacooray.com/" />
+<meta property="og:title" content="whoami · Sankha Cooray" />
+<meta property="og:description" content="One person, many perspectives — software engineer, XR innovator, maker, creative technologist." />
+<meta property="og:image" content="https://whoami.sankhacooray.com/og.png" />
+<meta name="twitter:card" content="summary_large_image" />
+<meta name="twitter:title" content="whoami · Sankha Cooray" />
+<meta name="twitter:description" content="One person, many perspectives — software engineer, XR innovator, maker, creative technologist." />
+<meta name="twitter:image" content="https://whoami.sankhacooray.com/og.png" />
+
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,300..600&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet" />
+
+<style>
+/* ─────────────────────────────  TOKENS  ───────────────────────────── */
+:root{
+  --serif:'Fraunces', Georgia, 'Times New Roman', serif;
+  --mono:'JetBrains Mono', ui-monospace, SFMono-Regular, Menlo, monospace;
+  --sans:-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+  --ease:cubic-bezier(.4,0,.2,1);
+}
+html[data-theme="dark"]{
+  --bg:#0c0d10;         --bg2:#131519;
+  --ink:#f2f0ea;        --ink-soft:#a7a49b;   --ink-faint:#66645d;
+  --line:rgba(242,240,234,.12);
+  --line-strong:rgba(242,240,234,.28);
+  --accent:#d8b06a;     --accent-soft:rgba(216,176,106,.14);
+  --chip:rgba(242,240,234,.05);
+}
+html[data-theme="light"]{
+  --bg:#f4f2ec;         --bg2:#eae7df;
+  --ink:#1a1917;        --ink-soft:#5a564d;   --ink-faint:#98948a;
+  --line:rgba(26,25,23,.12);
+  --line-strong:rgba(26,25,23,.26);
+  --accent:#9a6a1f;     --accent-soft:rgba(154,106,31,.12);
+  --chip:rgba(26,25,23,.04);
+}
+*{box-sizing:border-box;margin:0;padding:0}
+html,body{height:100%}
+body{
+  background:var(--bg); color:var(--ink); font-family:var(--sans);
+  -webkit-font-smoothing:antialiased; text-rendering:optimizeLegibility;
+  overflow:hidden;                      /* desktop: no scroll */
+}
+a{color:inherit;text-decoration:none}
+
+/* subtle grain / vignette backdrop */
+.backdrop{position:fixed;inset:0;z-index:0;pointer-events:none;
+  background:
+    radial-gradient(120% 80% at 50% -10%, var(--accent-soft), transparent 60%),
+    radial-gradient(90% 70% at 100% 110%, var(--bg2), transparent 55%);
+  opacity:.9}
+
+/* ─────────────────────────────  SHELL  ───────────────────────────── */
+.stage{position:relative;z-index:1;height:100vh;height:100dvh;
+  display:grid;grid-template-rows:auto 1fr auto;grid-template-columns:minmax(0,1fr);
+  max-width:1120px;margin:0 auto;padding:clamp(18px,3.2vh,40px) clamp(20px,4vw,56px)}
+.stage>*{min-width:0}
+.ident,.tabs,.panelwrap{max-width:100%}
+
+/* top bar */
+.top{display:flex;align-items:center;justify-content:space-between;gap:16px}
+.brand{font-family:var(--mono);font-size:13px;letter-spacing:.06em;color:var(--ink-soft)}
+.brand b{color:var(--ink);font-weight:500}
+.brand .cur{color:var(--accent);animation:blink 1.2s steps(1) infinite}
+@keyframes blink{50%{opacity:0}}
+.themebtn{font-family:var(--mono);font-size:12px;color:var(--ink-soft);
+  border:1px solid var(--line);border-radius:999px;padding:6px 12px;cursor:pointer;
+  background:transparent;transition:color .2s,border-color .2s,background .2s}
+.themebtn:hover{color:var(--ink);border-color:var(--line-strong);background:var(--chip)}
+
+/* ── identity header ── */
+.ident{margin-top:clamp(14px,3.4vh,34px)}
+.eyebrow{font-family:var(--mono);font-size:12px;letter-spacing:.16em;text-transform:uppercase;color:var(--accent);margin-bottom:10px}
+.name{font-family:var(--serif);font-weight:340;line-height:.98;letter-spacing:-.02em;
+  font-size:clamp(38px,7vw,78px)}
+.role{margin-top:12px;font-size:clamp(14px,1.7vw,18px);color:var(--ink-soft);max-width:60ch;line-height:1.5}
+.ikigai{margin-top:14px;font-family:var(--serif);font-style:italic;font-weight:340;
+  font-size:clamp(15px,1.9vw,21px);color:var(--ink);max-width:52ch;line-height:1.4}
+.ikigai b{font-style:normal;color:var(--accent);font-weight:500}
+
+/* ── tabs ── */
+.tabs{display:flex;flex-wrap:wrap;gap:2px;margin-top:clamp(16px,3vh,30px);
+  border-bottom:1px solid var(--line)}
+.tab{font-family:var(--mono);font-size:12.5px;letter-spacing:.04em;color:var(--ink-faint);
+  background:transparent;border:0;cursor:pointer;padding:10px 14px;position:relative;
+  transition:color .2s}
+.tab:hover{color:var(--ink-soft)}
+.tab[aria-selected="true"]{color:var(--ink)}
+.tab[aria-selected="true"]::after{content:"";position:absolute;left:14px;right:14px;bottom:-1px;height:2px;background:var(--accent)}
+.tab .pct{color:var(--accent);margin-left:6px;font-size:11px;opacity:.8}
+
+/* ── panel area ── */
+.panelwrap{position:relative;min-height:0;display:flex;align-items:center;padding:clamp(14px,2.6vh,26px) 0}
+.panel{display:none;width:100%;
+  grid-template-columns:minmax(0,.9fr) minmax(0,1.1fr);gap:clamp(22px,5vw,64px);align-items:start}
+.panel.active{display:grid;animation:fade .5s var(--ease)}
+@keyframes fade{from{opacity:0;transform:translateY(6px)}to{opacity:1;transform:none}}
+
+.p-left .p-kicker{font-family:var(--mono);font-size:11.5px;letter-spacing:.14em;text-transform:uppercase;color:var(--ink-faint);margin-bottom:12px}
+.p-left h2{font-family:var(--serif);font-weight:360;letter-spacing:-.01em;line-height:1.02;
+  font-size:clamp(26px,3.6vw,42px)}
+.p-left .p-blurb{margin-top:14px;color:var(--ink-soft);font-size:clamp(13.5px,1.4vw,15.5px);line-height:1.55;max-width:40ch}
+.p-left .p-tag{display:inline-flex;align-items:baseline;gap:8px;margin-top:18px;
+  font-family:var(--mono);font-size:12px;color:var(--ink-faint)}
+.p-left .p-tag .big{font-family:var(--serif);font-size:clamp(30px,4vw,46px);color:var(--accent);line-height:1;font-weight:400}
+
+/* skills chips */
+.p-right .p-kicker{font-family:var(--mono);font-size:11.5px;letter-spacing:.14em;text-transform:uppercase;color:var(--ink-faint);margin-bottom:14px}
+.chips{display:flex;flex-wrap:wrap;gap:8px}
+.chip{font-family:var(--sans);font-size:13px;color:var(--ink);background:var(--chip);
+  border:1px solid var(--line);border-radius:999px;padding:7px 13px;line-height:1;
+  transition:border-color .2s,background .2s,color .2s}
+.chip:hover{border-color:var(--line-strong)}
+.chip.key{border-color:var(--accent);color:var(--accent);background:var(--accent-soft)}
+
+/* overall: perspective bars */
+.bars{display:flex;flex-direction:column;gap:clamp(9px,1.5vh,15px)}
+.bar{display:grid;grid-template-columns:130px 1fr 40px;align-items:center;gap:14px}
+.bar .lbl{font-family:var(--mono);font-size:12px;color:var(--ink-soft)}
+.bar .track{height:6px;border-radius:999px;background:var(--chip);overflow:hidden}
+.bar .fill{height:100%;border-radius:999px;background:linear-gradient(90deg,var(--accent),color-mix(in srgb,var(--accent) 55%, var(--ink)));width:0;transition:width 1s var(--ease)}
+.bar .val{font-family:var(--mono);font-size:12px;color:var(--ink-faint);text-align:right}
+
+/* ── footer ── */
+.foot{display:flex;align-items:center;justify-content:space-between;gap:16px;
+  padding-top:clamp(10px,1.8vh,18px);border-top:1px solid var(--line);
+  font-family:var(--mono);font-size:11.5px;color:var(--ink-faint)}
+.foot a{color:var(--ink-soft);transition:color .2s}
+.foot a:hover{color:var(--accent)}
+.foot .dot{margin:0 8px;opacity:.5}
+
+/* ─────────────────────────────  MOBILE  ───────────────────────────── */
+@media (max-width:760px){
+  body{overflow-x:hidden;overflow-y:auto}
+  .role,.ikigai{max-width:none}
+  .stage{height:auto;min-height:100dvh;grid-template-rows:auto auto 1fr auto}
+  .panel.active{grid-template-columns:1fr;gap:24px}
+  .tabs{overflow-x:auto;flex-wrap:nowrap;-webkit-overflow-scrolling:touch;scrollbar-width:none}
+  .tabs::-webkit-scrollbar{display:none}
+  .tab{white-space:nowrap}
+  .bar{grid-template-columns:110px 1fr 36px}
+}
+@media (prefers-reduced-motion:reduce){*{animation:none!important;transition:none!important}}
+</style>
+</head>
+<body>
+<div class="backdrop"></div>
+
+<main class="stage">
+  <!-- top -->
+  <div class="top">
+    <div class="brand"><b>whoami</b> <span class="path">— sankha cooray</span><span class="cur">▊</span></div>
+    <button class="themebtn" id="themebtn" aria-label="Toggle theme">◐ theme</button>
+  </div>
+
+  <!-- identity -->
+  <header class="ident">
+    <div class="eyebrow" id="eyebrow">$ whoami</div>
+    <h1 class="name">Sankha Cooray</h1>
+    <p class="role" id="role"></p>
+    <p class="ikigai" id="ikigai"></p>
+    <nav class="tabs" id="tabs" role="tablist" aria-label="Perspectives"></nav>
+  </header>
+
+  <!-- panels -->
+  <section class="panelwrap" id="panelwrap"></section>
+
+  <!-- footer -->
+  <footer class="foot">
+    <div id="foot-left">Sri Lanka ⇄ Singapore</div>
+    <div>
+      <a href="https://www.linkedin.com/in/sankhacooray/" target="_blank" rel="noopener">linkedin</a>
+      <span class="dot">·</span>
+      <a href="https://sankhacooray.com" target="_blank" rel="noopener">sankhacooray.com</a>
+    </div>
+  </footer>
+</main>
+
+<script src="data.js"></script>
+<script src="app.js"></script>
+</body>
+</html>

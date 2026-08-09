@@ -1,0 +1,26 @@
+name = "whoami-sankhacooray-com"
+compatibility_date = "2026-06-01"
+
+# Pinned so wrangler doesn't try to auto-list accounts (the CLOUDFLARE_API_TOKEN
+# used for DNS work across the network can't list accounts). Not a secret.
+account_id = "9a1da48a0f61e7cebcba39517856d87e"
+
+# Static-assets-only Worker — no server code, just the built page.
+[assets]
+directory = "./public"
+not_found_handling = "single-page-application"
+
+# Custom domain: whoami.sankhacooray.com is bound to this Worker.
+#
+# NOTE: our CLOUDFLARE_API_TOKEN can deploy Workers + edit DNS, but it is NOT
+# allowed to touch `/zones/.../workers/routes`, so a `custom_domain = true` route
+# here makes `wrangler deploy` fail (Authentication error 10000) even though the
+# asset upload succeeds. The domain was therefore attached out-of-band via the
+# account-level Workers Custom Domains API:
+#
+#   PUT /accounts/<account>/workers/domains
+#   { zone_id, hostname: "whoami.sankhacooray.com",
+#     service: "whoami-sankhacooray-com", environment: "production" }
+#
+# That binding persists server-side, so plain `wrangler deploy` (assets only)
+# keeps the site updated. Re-run the PUT above only if the domain is ever detached.
