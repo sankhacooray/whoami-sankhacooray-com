@@ -44,7 +44,7 @@
     const left = document.createElement("div");
     left.className = "p-left";
     left.innerHTML =
-      `<div class="p-kicker">${t.kicker || "perspective"}</div>` +
+      (t.kicker ? `<div class="p-kicker">${t.kicker}</div>` : "") +
       `<h2>${t.heading}</h2>` +
       `<p class="p-blurb">${t.blurb}</p>` +
       (t.pct != null
@@ -56,7 +56,7 @@
     right.className = "p-right";
     if (t.bars) {
       right.innerHTML =
-        `<div class="p-kicker">the mix</div><div class="bars">` +
+        `<div class="bars">` +
         t.bars.map(b =>
           `<div class="bar"><span class="lbl">${b.label}</span>` +
           `<span class="track"><span class="fill" data-w="${b.value}"></span></span>` +

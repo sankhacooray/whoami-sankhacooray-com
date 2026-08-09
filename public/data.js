@@ -20,14 +20,12 @@ window.DATA = {
     /* ── 0 · OVERALL ─────────────────────────────────────────────── */
     {
       label: "overall",
-      kicker: "the whole picture",
       heading: "One person, many lenses.",
       blurb:
         "Across a decade of work — browser-connected science sensors, " +
         "augmented-reality games, health wearables, LLM tools, and whole " +
         "solo web networks — the same instinct keeps showing up: make " +
         "technology tangible, and make it reach people.",
-      tagline: "how the mix breaks down →",
       bars: [
         { label: "Software Engineer",   value: 95 },
         { label: "Immersive & Games",   value: 76 },
@@ -43,9 +41,7 @@ window.DATA = {
     /* ── 1 · ENGINEER ────────────────────────────────────────────── */
     {
       label: "engineer",
-      pct: 95,
-      kicker: "perspective 01",
-      heading: "The Engineer",
+      pct: 95,      heading: "The Engineer",
       blurb:
         "Full-stack, front to back, and solo when it needs to be — web, " +
         "mobile, cloud, and the pipelines that ship them. Most of what I " +
@@ -72,9 +68,7 @@ window.DATA = {
     /* ── 2 · IMMERSIVE ───────────────────────────────────────────── */
     {
       label: "immersive",
-      pct: 76,
-      kicker: "perspective 02",
-      heading: "The Immersive Maker",
+      pct: 76,      heading: "The Immersive Maker",
       blurb:
         "Blending real-world objects with digital content — AR/MR apps, " +
         "Unity games, and Bluetooth-connected tiles that turn a room into " +
@@ -97,9 +91,7 @@ window.DATA = {
     /* ── 3 · MAKER ───────────────────────────────────────────────── */
     {
       label: "maker",
-      pct: 68,
-      kicker: "perspective 03",
-      heading: "The Maker",
+      pct: 68,      heading: "The Maker",
       blurb:
         "Bridging hardware to the browser and the phone — USB science " +
         "sensors, BLE tiles, wearables, and microcontrollers. If it has a " +
@@ -122,9 +114,7 @@ window.DATA = {
     /* ── 4 · CREATIVE ────────────────────────────────────────────── */
     {
       label: "creative",
-      pct: 58,
-      kicker: "perspective 04",
-      heading: "The Creative Technologist",
+      pct: 58,      heading: "The Creative Technologist",
       blurb:
         "Minimalist design systems and browser-native sound — typography, " +
         "theming, and audio DSP. Less, but sharper: I care how a thing " +
@@ -147,9 +137,7 @@ window.DATA = {
     /* ── 5 · SCIENTIST ───────────────────────────────────────────── */
     {
       label: "scientist",
-      pct: 55,
-      kicker: "perspective 05",
-      heading: "The Scientist",
+      pct: 55,      heading: "The Scientist",
       blurb:
         "A physical-sciences and HCI research background pointed at health, " +
         "accessibility, and education — with AI/ML woven through. Curiosity " +
@@ -172,9 +160,7 @@ window.DATA = {
     /* ── 6 · INNOVATOR ───────────────────────────────────────────── */
     {
       label: "innovator",
-      pct: 72,
-      kicker: "perspective 06",
-      heading: "The Innovator",
+      pct: 72,      heading: "The Innovator",
       blurb:
         "Turning ideas into shipped products — and teaching others to do " +
         "the same. From app-store launches and payments to science kits " +
