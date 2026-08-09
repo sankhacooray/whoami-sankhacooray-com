@@ -22,13 +22,22 @@
   // ── build tabs ──────────────────────────────────────────────────────
   const tabsEl = $("#tabs");
   const wrapEl = $("#panelwrap");
+  const cap = s => s.charAt(0).toUpperCase() + s.slice(1);
   DATA.tabs.forEach((t, i) => {
     const b = document.createElement("button");
-    b.className = "tab";
+    b.className = "cardnav";
     b.setAttribute("role", "tab");
     b.setAttribute("aria-selected", i === 0 ? "true" : "false");
     b.dataset.idx = i;
-    b.innerHTML = t.label + (t.pct != null ? ` <span class="pct">${t.pct}%</span>` : "");
+    const idx = i === 0 ? "◆" : String(i).padStart(2, "0");
+    const foot = t.pct != null
+      ? `<span class="cp">${t.pct}%</span>`
+      : `<span class="cp small">explore →</span>`;
+    b.innerHTML =
+      `<span class="idx">${idx}</span>` +
+      `<span class="ct">${cap(t.label)}</span>` +
+      (t.note ? `<span class="cn">${t.note}</span>` : "") +
+      foot;
     b.addEventListener("click", () => select(i));
     tabsEl.appendChild(b);
     wrapEl.appendChild(buildPanel(t, i));
@@ -80,7 +89,7 @@
   }
 
   function select(i, push) {
-    tabsEl.querySelectorAll(".tab").forEach(t =>
+    tabsEl.querySelectorAll(".cardnav").forEach(t =>
       t.setAttribute("aria-selected", +t.dataset.idx === i ? "true" : "false"));
     wrapEl.querySelectorAll(".panel").forEach(p =>
       p.classList.toggle("active", +p.dataset.idx === i));

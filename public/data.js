@@ -20,6 +20,7 @@ window.DATA = {
     /* ── 0 · OVERALL ─────────────────────────────────────────────── */
     {
       label: "overall",
+      note: "the whole mix",
       heading: "One person, many lenses.",
       blurb:
         "Across a decade of work — browser-connected science sensors, " +
@@ -41,6 +42,7 @@ window.DATA = {
     /* ── 1 · ENGINEER ────────────────────────────────────────────── */
     {
       label: "engineer",
+      note: "builds it end to end",
       pct: 95,      heading: "The Engineer",
       blurb:
         "Full-stack, front to back, and solo when it needs to be — web, " +
@@ -68,6 +70,7 @@ window.DATA = {
     /* ── 2 · IMMERSIVE ───────────────────────────────────────────── */
     {
       label: "immersive",
+      note: "physical × digital",
       pct: 76,      heading: "The Immersive Maker",
       blurb:
         "Blending real-world objects with digital content — AR/MR apps, " +
@@ -91,6 +94,7 @@ window.DATA = {
     /* ── 3 · MAKER ───────────────────────────────────────────────── */
     {
       label: "maker",
+      note: "hardware → browser",
       pct: 68,      heading: "The Maker",
       blurb:
         "Bridging hardware to the browser and the phone — USB science " +
@@ -114,6 +118,7 @@ window.DATA = {
     /* ── 4 · CREATIVE ────────────────────────────────────────────── */
     {
       label: "creative",
+      note: "design & sound",
       pct: 58,      heading: "The Creative Technologist",
       blurb:
         "Minimalist design systems and browser-native sound — typography, " +
@@ -137,6 +142,7 @@ window.DATA = {
     /* ── 5 · SCIENTIST ───────────────────────────────────────────── */
     {
       label: "scientist",
+      note: "research-driven",
       pct: 55,      heading: "The Scientist",
       blurb:
         "A physical-sciences and HCI research background pointed at health, " +
@@ -160,6 +166,7 @@ window.DATA = {
     /* ── 6 · INNOVATOR ───────────────────────────────────────────── */
     {
       label: "innovator",
+      note: "ship & teach",
       pct: 72,      heading: "The Innovator",
       blurb:
         "Turning ideas into shipped products — and teaching others to do " +
