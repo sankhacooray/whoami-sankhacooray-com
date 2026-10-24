@@ -1,12 +1,18 @@
 {
+  "id": "/",
   "name": "whoami · Sankha Cooray",
   "short_name": "whoami",
-  "description": "One person, many perspectives — software engineer, XR innovator, maker, creative technologist.",
+  "description": "Who is Sankha Cooray — a software engineer, XR innovator, maker and creative technologist. Explore the many perspectives behind the work.",
   "start_url": "/",
+  "scope": "/",
   "display": "standalone",
+  "lang": "en",
   "background_color": "#0c0d10",
   "theme_color": "#0c0d10",
   "icons": [
-    { "src": "icon.svg", "sizes": "any", "type": "image/svg+xml", "purpose": "any" }
+    { "src": "icon.svg", "sizes": "any", "type": "image/svg+xml", "purpose": "any" },
+    { "src": "assets/icon-192.png", "sizes": "192x192", "type": "image/png", "purpose": "any" },
+    { "src": "assets/icon-512.png", "sizes": "512x512", "type": "image/png", "purpose": "any" },
+    { "src": "assets/icon-maskable-512.png", "sizes": "512x512", "type": "image/png", "purpose": "maskable" }
   ]
 }
